@@ -41,8 +41,14 @@ app.get("/", (req, res) => {
  * Local Server Information
  * Values from .env (environment) file
  *************************/
+//const port = process.env.PORT || 10000;
+//const host = process.env.HOST || '0.0.0.0';
+
+/* **********************
+local server information
+*/
 const port = process.env.PORT || 10000;
-const host = process.env.HOST || '0.0.0.0';
+const host = '0.0.0.0';
 
 
 
