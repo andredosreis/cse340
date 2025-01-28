@@ -17,3 +17,6 @@ node_modules
 
 # ingnore lock yaml files
 pnp-lock.yaml
+
+# env file
+root.env

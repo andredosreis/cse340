@@ -1,34 +1,355 @@
+                                                                                                                                                                   
 /******* Change Box Model ***************/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&family=Montserrat:ital,wght@0,800;1,800&display=swap');
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-}                                                                                                                                                                   
-/******* Global Styles ***************/
-header{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
 }
-header a{
-  
+
+p, a, li, label.dati, #classificationList, #inventoryDisplay td {
+  font-family: "Jost", sans-serif;
+}
+
+h1, h2, h3, h4, .siteName a, legend, .bottone, #inventoryDisplay th {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.siteName a {
+  font-size: 1.8em;
+}
+
+.siteName a, #tools a{
   text-decoration: none;
 }
 
-nav {
-  background-color: #333;
-  color: #fff;
+.siteName a:visited {
+  color:black;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline;
+  font-weight: bold;
+  padding: 5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+  background-color: #8EA8C3;
+}
+
+#wrapper {
+  background-color: white;
+}
+
+picture img  {
+  display: block;
+  max-width: 80vw;
+  margin: auto;
+  background-size: cover;
+}
+
+#own {
+  max-width: 100px;
+}
+
+#delorean {
+  position: relative;
+}
+
+#rectangle {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 0;
   padding: 10px;
+}
+
+#rectangle p {
+  line-height: 1.2;
+}
+
+#dmc {
+  margin-top: 70px;
+}
+#dmc ul {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 30px;
+}
+  
+  
+
+
+
+#box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-img {
+  padding: 5px;
   text-align: center;
 }
-nav ul{
+
+.pic {
+  width: 45vw;
+  height: 80px;
+  background-color: #8EA8C3;
+  text-align: center;
   display: flex;
   justify-content: center;
-  justify-content: space-around;
-  
-  padding: 0;
-  margin: 0;
+  align-items: center;
+}
 
+.pic img {
+  margin-bottom: 0px;
+  max-height: 70px;
+  width: auto;
   
-  list-style: none;
+}
+
+#inv-display {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#inv-display li{
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 280px;
+  max-height: 500px;
+  border: 3px solid #8EA8C3;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px #888888;
+  padding: 15px;
+  margin: 15px;
+}
+
+.namePrice hr {
+  display: none;
+}
+
+.namePrice h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.namePrice h2 a:hover {
+  color: #8EA8C3;
+}
+
+.namePrice h2 a:visited {
+  color: rgb(67, 67, 67);
+}
+
+#fotoAuto {
+ max-width: 90vw;
+ display: block;
+ margin: auto;
+}
+
+#carPrice {
+  font-size: 2em;
+  background-color: #8EA8C3;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#carName {
+  color:#8EA8C3;
+  font-size: 2em;
+  text-align: center;
+}
+
+legend  {
+text-align: center;
+}
+
+form fieldset {
+  margin: 1rem;
+  border: 8px solid #8EA8C3;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+form label.dati, form div {
+  display: block;
+  padding-top: 1rem;
+}
+
+form label.dati input:required {
+  border-left: red solid 6px;
+}
+
+form label.dati input:required:valid {
+  border-left: #01bb01 solid 6px;
+}
+
+form label.dati input, form label.dati select, textarea {
+  display: block;
+  font-size: 1rem;
+  border: solid 1px #8EA8C3;
+  border-radius: 4px;
+  padding: 0.75rem;
+  width: 90%;
+  max-width: 18rem;
+  background-color: #F7F7FF;
+}
+
+/*Bottone*/
+.bottone {
+  display: block;
+  margin: auto;
+  background-color: #8EA8C3;
+  font-size: 0.9rem;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+.bottone:hover {
+  background-color: white;
+  border: 3px solid #8EA8C3;
+  color: black;
+}
+
+#management {
+  display: flex;
+}
+
+#management a {
+  text-decoration: none;
+  margin: 25px;
+  text-shadow: 1px 1px 3px #888888;
+  color: #840000;
+}
+ 
+#management a:visited {
+  color: #840000;
+}
+
+#classificationList {
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.success li {
+  list-style-type: none;
+  color: #01bb01;
+  font-weight: bold;
+}
+
+#inventoryDisplay th {
+  padding: 10px;
+}
+
+#inventoryDisplay a {
+  text-decoration: none;
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 992px) {
+  
+  body {
+    background-image: url("/images/site/checkerboard.jpg");
+  }
+
+  #wrapper {
+    border: 8px solid #8EA8C3;
+    border-radius: 10px;
+    max-width: 80vw;
+    margin: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  picture img {
+    max-width: 100%;
+  }
+
+  #parte2 {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+  }
+
+  #upgrade {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #dmc {
+    margin-top: 0;
+    grid-column: 2/3;
+  }
+
+  .pic {
+    max-width: 15vw;
+    margin: 5px;
+  }
+
+  footer {
+    margin-top: 30px;
+  }
+
+  #schedaAuto  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 15px;
+  }
+
+  #fotoAuto {
+    grid-column: 1/2;
+    grid-row: 1/5;
+   }
+
+  #carName {
+    grid-column: 2/3;
+    grid-template-rows: 1/2;
+    text-align: left;
+  }
+
+  #descrizione {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  #carPrice {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #distanza {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
 }

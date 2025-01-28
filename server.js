@@ -6,19 +6,20 @@
 
  * Require Statements
  *************************/
+
 require("dotenv").config({ path: "./.env.sample" });
 console.log("PORT:", process.env.PORT);
 console.log("HOST:", process.env.HOST);
 
-
-
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
+const baseController = require('./controllers/baseController');
+const pool = require("./database/")
+const utilities = require("./utilities")
+
+
 const app = express()
-const static = require("./routes/static")
-
-
 /* ***********************
  * View Engine and template
  *************************/
@@ -30,32 +31,29 @@ app.set("layout", "layouts/layout")//not at  views layout
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+app.use(require('./routes/static'));
 
 // index route
-app.get("/", (req, res) => {
-  res.render("partials/index", { title: "Home" })
-})
+app.get("/", baseController.buildHome);
 
-/* ***********************
+
+
+// invintory route -unit 3, acrivity
+
+//app.use("/inv", require('./routes/inventory-route'));
+
+/* *********************** 
  * Local Server Information
  * Values from .env (environment) file
  *************************/
-//const port = process.env.PORT || 10000;
-//const host = process.env.HOST || '0.0.0.0';
 
-/* **********************
-local server information
-*/
 const port = process.env.PORT || 10000;
-const host = '0.0.0.0';
+const host = process.env.HOST || '0.0.0.0';
 
-
-
-
-/* ***********************
- * Log statement to confirm server operation
- *************************/
 app.listen(port, host, () => {
-  console.log(`App listening on ${host}:${port}`);
+  console.log(`Server is running on http://${host}:${port}`);
 });
+
+
+
+
