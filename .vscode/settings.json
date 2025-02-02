@@ -11,6 +11,19 @@
             "driver": "PostgreSQL",
             "name": "render.com",
             "connectString": "postgresql://cse340_j5un_user:UfJ4GE3UVFyQrGEZaoo7toe7VzjO1Y9x@dpg-cu5vgdl2ng1s73bkogh0-a.oregon-postgres.render.com/cse340_j5un"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true,
+                    "requestCert": false
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "ces340",
+            "connectString": "postgresql://ces340_user:Mqf4WbszQIdbFjnMugRZeVWtnzAyWgsv@dpg-cuej0bjqf0us73de06v0-a.oregon-postgres.render.com/ces340"
         }
     ]
 }
