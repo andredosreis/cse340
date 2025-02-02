@@ -41,7 +41,7 @@ app.get("/", baseController.buildHome);
 
 // Aqui usamos a variável de ambiente `PORT` do Render (ou 10000 se não estiver configurada)
 const port = process.env.PORT || 10000;
-const host = process.env.HOST || '0.0.0.0';  // No Render, o host geralmente deve ser 0.0.0.0
+const host =  '0.0.0.0';  // No Render, o host geralmente deve ser 0.0.0.0
 
 // Inicializa o servidor
 app.listen(port, host, () => {
