@@ -25,6 +25,11 @@ Util.getNav = async function (req, res, next) {
   return list;
 };
 
+/* ************************/
+/* buind classicafication Grid*/
+
+Util.getGrid = async function (req, res, next) {
+
 /* ************************
  * Error handling middleware
  ************************** */
