@@ -24,9 +24,12 @@ const app = express();
 /* ***********************
  * View Engine and template
  *************************/
+app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "layouts/layout"); // Layout do EJS
+app.use(express.static("public"));
+
 
 /* ***********************
  * Routes
@@ -35,6 +38,9 @@ app.use(require('./routes/static'));
 
 // Rota principal
 app.get("/", baseController.buildHome);
+
+//ROUTE FOR INVENTORY
+app.get("/inventory/:classification_id", baseController.showInventory);
 
 /* *********************** 
  * Local Server Information

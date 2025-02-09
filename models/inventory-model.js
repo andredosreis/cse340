@@ -1,5 +1,6 @@
 const pool = require("../database/")
 
+
 /* ***************************
  *  Get all classification data
  * ************************** */
@@ -8,3 +9,17 @@ async function getClassifications(){
 }
 
 module.exports = {getClassifications}
+
+
+/* ***************************
+ *  Get inventory by classification ID
+ *************************** */
+async function getInventoryByClassification(classification_id) {
+  const sql = "SELECT * FROM public.inventory WHERE classification_id = $1";
+  const result = await pool.query(sql, [classification_id]);
+  console.log("reultado da consulta:", result.rows);
+  return result.rows;
+}
+
+/* Exportando funções corretamente */
+module.exports = { getClassifications, getInventoryByClassification };
