@@ -42,6 +42,26 @@ app.get("/", baseController.buildHome);
 //ROUTE FOR INVENTORY
 app.get("/inventory/:classification_id", baseController.showInventory);
 
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, we appear to have lost that page.'});
+});
+
+app.use(async (err, req, res, next) => {
+  let nav = await utilities.getNav()
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message: err.message,
+    nav
+  })
+})
+
+// File Not Found Route - must be last route in list
+
 /* *********************** 
  * Local Server Information
  * Values from .env (environment) file

@@ -26,14 +26,18 @@ baseController.showInventory = async function(req, res) {
 
     let grid;
     if (inventory.length > 0) {
-      grid = inventory.map(vehicle => `
-      <li>
-    <h2>${vehicle.inv_make} ${vehicle.inv_model}</h2>
-    <img src="${vehicle.inv_image.startsWith('/') ? vehicle.inv_image : '/images/vehicles/' + vehicle.inv_image}" 
-         alt="${vehicle.inv_make} ${vehicle.inv_model}">
-    <p>Preço: $${vehicle.inv_price}</p>
-  </li>
-`).join('');
+      grid = inventory.map(vehicle => {
+        console.log("Imagem Principal:", vehicle.inv_image, "Thumbnail:", vehicle.inv_thumbnail); // ✅ Debug
+        return `
+          <li>
+            <h2>${vehicle.inv_make} ${vehicle.inv_model}</h2>
+            <img src="${vehicle.inv_thumbnail}" alt="${vehicle.inv_make} ${vehicle.inv_model} Thumbnail">
+            <p>Preço: $${vehicle.inv_price}</p>
+            <a href="${vehicle.inv_image}" target="_blank">Ver imagem maior</a>
+          </li>
+        `;
+      }).join('');
+      
     } else {
       grid = "<p>Nenhum veículo encontrado.</p>";
     }
