@@ -2,7 +2,7 @@
 /******* Change Box Model ***************/
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&family=Montserrat:ital,wght@0,800;1,800&display=swap');
 
-*,
+
 *:before,
 *:after {
   box-sizing: border-box;
@@ -37,7 +37,7 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-/*
+
 nav li {
   display: inline;
   font-weight: bold;
@@ -51,7 +51,7 @@ nav ul {
   padding-left: 0;
   background-color: #8EA8C3;
 }
-*/
+
 nav {
   background-color: #8EA8C3;
   padding: 10px;
@@ -81,6 +81,7 @@ nav ul li a:hover {
 }
 
 /* Para dispositivos móveis */
+
 @media screen and (max-width: 768px) {
   nav ul {
     display: block;
@@ -259,6 +260,7 @@ form label.dati input, form label.dati select, textarea {
 }
 
 /*Bottone*/
+
 .bottone {
   display: block;
   margin: auto;
