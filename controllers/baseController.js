@@ -1,5 +1,6 @@
 const utilities = require("../utilities");
 const inventoryModel = require("../models/inventory-model");
+
 const baseController = {};
 
 baseController.buildHome = async function(req, res) {
@@ -27,7 +28,7 @@ baseController.showInventory = async function(req, res) {
     let grid;
     if (inventory.length > 0) {
       grid = inventory.map(vehicle => {
-        console.log("Imagem Principal:", vehicle.inv_image, "Thumbnail:", vehicle.inv_thumbnail); // ✅ Debug
+        console.log("Imagem Principal:", vehicle.inv_thumbnail,   "Thumbnail:", vehicle.inv_image,); // ✅ Debug
         return `
           <li>
             <h2>${vehicle.inv_make} ${vehicle.inv_model}</h2>
