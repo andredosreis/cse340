@@ -59,6 +59,25 @@ baseController.showInventory = async function(req, res) {
   }
 };
 
+baseController.showVehicle = async function(req, res) {
+  try {
+    const inv_id = req.params.inv_id;
+    console.log("Recebido inv_id:", inv_id);
+    const vehicle = await inventoryModel.getInventoryById(inv_id);
+    
+    if (vehicle) {
+      // Se achou, mostra os detalhes
+      res.render("vehicle-detail", { vehicle });
+    } else {
+      // Se não achou, mostra mensagem de erro amigável
+      res.render("error", { message: "Veículo não encontrado" });
+    }
+  } catch (error) {
+    console.error(error);
+    res.render("error", { message: "Erro ao buscar detalhes do veículo" });
+  }
+};
+
 
 
 module.exports = baseController;

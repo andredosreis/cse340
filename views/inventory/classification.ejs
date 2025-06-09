@@ -1,16 +1,16 @@
-<% if (title) { %>
-    <h1><%= title %></h1>
-  <% } else { %>
-    <script>window.location.href = '/'</script>
-  <% } %>
-  
-  <main>
-    <% if (grid && grid.length > 0) { %>
-      <ul id="inv-display">
-        <%- grid %>
-      </ul>
+  <% if (title) { %>
+      <h1><%= title %></h1>
     <% } else { %>
-      <p>Nenhum veículo encontrado.</p>
+      <script>window.location.href = '/'</script>
     <% } %>
-  </main>
-  
+    
+    <main>
+      <% if (grid && grid.length > 0) { %>
+        <ul id="inv-display">
+          <%- grid %>
+        </ul>
+      <% } else { %>
+        <p>Nenhum veículo encontrado.</p>
+      <% } %>
+    </main>
+    
